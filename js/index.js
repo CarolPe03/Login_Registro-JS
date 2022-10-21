@@ -1,7 +1,7 @@
-// declarar variables para vincular los objetos del formulario
-const usuario =document.getElementById('user');
-const password =document.getElementById('pass');
-const document =document.getElementById('formLogin');
+//   declarar variables para vincular los objetos del formulario
+const usuario = document.getElementById('user');
+const password = document.getElementById('pass');
+const formulario = document.getElementById('formlogin');
 
 //Generando o leyendo en¿ventos 
 formulario.addEventListener('submit', login);
@@ -13,7 +13,7 @@ function login(e){
     let usuarioVal = usuario.value;
     let passwordVal = password.value;
 
-if(usuarioVal == '' || passwordVal == ''){
+    if(usuarioVal == '' || passwordVal == ''){
         creaMensaje('Verifica tus campos','danger');
         return;
     }
@@ -33,4 +33,5 @@ if(usuarioVal == '' || passwordVal == ''){
     }else{
         creaMensaje('No hay registros','danger');
     }
+
 }
