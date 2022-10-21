@@ -15,5 +15,19 @@ function registro(e){
     if(nombreVal == '' || emailVal == '' || userVal == '' || passVal == ''){
         return;
     }
-    console.log("Validando datos!")
+    const usuario = {
+        nombre: nombreVal,
+        email: emailVal,
+        user: userVal,
+        pass: passVal,
+    }
+
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+
+     nombre.value = '';
+     email.vaue = '';
+     user.value = '';
+     pass.value = '';
+
+    console.log("Usuario guardado");
 }
