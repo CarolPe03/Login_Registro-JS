@@ -1,9 +1,12 @@
+//declaracion variables de referencia a objetos
 const nombre = document.getElementById('name');
 const email = document.getElementById('email');
 const user = document.getElementById('user');
 const pass = document.getElementById('pass');
 const formulario = document.getElementById('formRegistro');
-formulario.addEventListener('submit',registro);
+
+formulario.addEventListener('submit', registro);
+
 function registro(e){
     e.preventDefault();
     
@@ -13,9 +16,10 @@ function registro(e){
     let passVal = pass.value;
     
     if(nombreVal == '' || emailVal == '' || userVal == '' || passVal == ''){
-        creaMensaje('Verifica tus campos');
+        creaMensaje('Verifica tus campos','danger');
         return;
     }
+
     const usuario = {
         nombre: nombreVal,
         email: emailVal,
@@ -30,17 +34,5 @@ function registro(e){
      user.value = '';
      pass.value = '';
 
-     creaMensaje('Usuario Registrado!','seccess');
-
-     function crearMensaje(texto,tipo){
-        const nuevoElemento= document.createElement('div');
-        nuevoElemento.innerText=texto;
-        nuevoElemento.classList.add('alert','alert-'+tipo);
-        const divMensaje= document.getElementById('mensaje');
-        divMensaje.appendChild(nuevoElemento);
-        setTimeout(function(){
-            nuevoElemento.remove();
-        },2000);
-
-     }
+    creaMensaje('Usuario Registrado!','seccess');
 }
