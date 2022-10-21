@@ -13,7 +13,7 @@ function login(e){
     let usuarioVal = usuario.value;
     let passwordVal = password.value;
 
-    if(usuarioVal == '' || passwordVal == ''){
+if(usuarioVal == '' || passwordVal == ''){
         creaMensaje('Verifica tus campos','danger');
         return;
     }
